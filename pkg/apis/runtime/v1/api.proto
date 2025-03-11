@@ -1283,6 +1283,9 @@ message Container {
     // introduce the image_id field, which should always refer to a unique
     // image identifier on the node.
     string image_id = 10;
+    // Actual source of the pulled image when multiple mirrors are
+    // configured for this image.
+    string image_source = 11;
 }
 
 message ListContainersResponse {
@@ -1346,6 +1349,9 @@ message ContainerStatus {
     string image_id = 17;
     // User identities initially attached to the container
     ContainerUser user = 18;
+    // Actual source of the pulled image when multiple mirrors are
+    // configured for this image.
+    string image_source = 19;
 }
 
 message ContainerStatusResponse {
