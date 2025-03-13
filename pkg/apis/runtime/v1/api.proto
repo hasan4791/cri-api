@@ -1283,9 +1283,6 @@ message Container {
     // introduce the image_id field, which should always refer to a unique
     // image identifier on the node.
     string image_id = 10;
-    // Actual source of the pulled image when multiple mirrors are
-    // configured for this image.
-    string image_source = 11;
 }
 
 message ListContainersResponse {
@@ -1520,6 +1517,9 @@ message Image {
     // It must only be treated as a recommendation -- the client can still request that the image be deleted,
     // and the runtime must oblige.
     bool pinned = 8;
+    // Actual source of the pulled image when multiple mirrors are
+    // configured for this image.
+    string image_source = 9;
 }
 
 message ListImagesResponse {
